@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_play_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+    <!--todo 顺序播放 -->
+    <!--todo 播放列表 -->
+    <ImageView
+        android:id="@+id/image_play_bar_cover"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="6dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/books"
+        android:contentDescription="@null"/>
+
+    <TextView
+        android:id="@+id/txt_player_bar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/image_play_bar_cover"
+        android:text="@string/audink_slogan"
+        android:textSize="16sp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp">
+
+
+        <CheckBox
+            android:id="@+id/check_audio_play"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/selector_player_button_background"
+            android:backgroundTint="@android:color/black"
+            android:button="@null"
+            android:checked="false"/>
+
+        <ImageView
+            android:id="@+id/image_play_book"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="12dp"
+            android:tint="@android:color/black"
+            android:clickable="true"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/selector_more_gray_radius"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_multimedia_menu"
+            android:focusable="true"/>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

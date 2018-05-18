@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/linear_book_article_item"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:background="?attr/selectableItemBackground"
+              android:clickable="true"
+              android:focusable="true"
+              android:gravity="center_vertical"
+              android:orientation="horizontal">
+
+    <View
+        android:id="@+id/view_article_item_playing_mark"
+        android:layout_width="3dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="3dp"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@null"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/txt_article_item_index"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="@string/num_1"
+        android:textSize="18sp"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp">
+
+        <TextView
+            android:id="@+id/txt_article_item_title"
+            style="@style/TextAppearance.AppCompat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/article_name"
+            android:textSize="@dimen/text_size_normal"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end">
+
+            <ImageView
+                android:id="@+id/image_article_item_download"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_more_gray_radius"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_download_interface_arrow_symbol"
+                android:tint="@android:color/darker_gray"/>
+
+            <ImageView
+                android:id="@+id/image_article_item_play"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_more_gray_radius"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:paddingEnd="17dp"
+                android:paddingStart="17dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_play_button__without_circle"
+                android:tint="@android:color/darker_gray"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/txt_article_item_downloading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/normal_padding"
+                android:text="@string/downloading"
+                android:textColor="@android:color/darker_gray"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="bottom"
+            android:background="?android:attr/listDivider"/>
+    </FrameLayout>
+</LinearLayout>

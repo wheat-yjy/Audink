@@ -1,0 +1,256 @@
+/*导航栏*/
+.navbar-default{
+    background-color:#fff;
+    position: absolute;
+}
+.nav_logo{
+    font-family: "Helvetica";
+    font-size: 25px;
+    color:#364b9a;
+    font-weight: bold;
+}
+.nav_item{
+    color:#000;
+}
+.nav_item:hover{
+    color:#7782de;
+}
+
+/*产品简介*/
+.jumbotron{
+    //background-image: url('/img/background.jpg');
+    color: #eee;
+    font-family: "宋体";
+}
+.summary_logo{
+    color: #fff;
+    font-family: "Helvetica";
+    text-shadow: #212f60 0.05em 0.05em 0.1em;
+}
+.summary_title{
+    color: #e6f5fe;
+}
+.summary_content{
+    color: #c2d3f6;
+    //font-family: "华文细黑";
+}
+/*产品功能*/
+.function{
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.function_item{
+    padding: 20px 20px;
+}
+.function_title{
+    line-height: 35px;
+    color: #151f42;
+    font-size: 22.5px;
+}
+.function_content{
+    color: #666;
+}
+/*产品特色*/
+.feature{
+    padding-top: 40px;
+    padding-bottom: 70px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.feature_title{
+    padding-bottom: 50px;
+    text-align: center;
+}
+.feature_items{
+    padding:0 30px;
+}
+.feature_item{
+    padding:20px 0;
+    text-align: center;
+}
+.feature_title_item{
+    padding-top: 10px;
+    font-size: 18px;
+    line-height: 35px;
+}
+.feature_content{
+    font-size: 14px;
+    color: #777;
+}
+/*产品体验*/
+.product_online{
+    border-bottom:1px solid #ccc;
+    padding-bottom: 120px;
+}
+.online_title{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    //color:#364b9a;
+}
+.online_box{
+    border: 1px solid #ddd;
+    height:400px;
+    box-shadow: 0 0 15px #cbd5ff;
+}
+.online_types{
+    border-right: 1px solid #ddd;
+    height:400px;
+    text-align: center;
+}
+.online_type{
+    height: 133px;
+    background-color: #fff;
+    color: #364b9a;
+    padding: 40px 14%;
+    cursor:pointer;
+}
+.online_type:hover{
+    background-color: rgba(144,155,247,0.025);
+}
+.online_type_active{
+    background-color: rgba(144,155,247,0.075);
+}
+.online_title_type{
+    font-size: 15px;
+    line-height: 25px;
+    //color: #000;
+}
+.online_content{
+    font-size: 13px;
+    color: #999;
+}
+.online_text{
+    height:300px;
+    width: 100%;
+    border: none;
+    resize : none;
+    outline:none;
+    border-bottom: 1px solid #ddd;
+    padding:30px 30px;
+    font-size: 15px;
+    color:#666;
+}
+.online_textarea{
+    height:240px;
+    width: 100%;
+    border: none;
+    resize : none;
+    outline:none;
+    //border-bottom: 1px solid #ddd;
+    //padding:30px 30px;
+    font-size: 15px;
+    color:#666;
+}
+.online_type_file{
+    text-align: center;
+    line-height: 270px;
+    //padding: 100px 50px;
+    font-size: 17px;
+}
+.online_type_file_name{
+    padding-right: 10px;
+}
+.online_hidden{
+    display:none;
+}
+.online_play{
+    text-align: center;
+    height: 100px;
+    width: 100%;
+}
+.online_audio{
+    display: inline;
+    line-height: 100px;
+    padding-left: 20%;
+    padding-right: 2%;
+    padding-top: 12px;
+    float:left;
+}
+.online_audio_xs{
+    display: inline;
+    padding-left: 15%;
+    padding-right: 1%;
+    padding-top: 12px;
+}
+.online_button_box{
+    //display: inline;
+    line-height: 100px;
+    float:left;
+    //padding-top: 15px;
+}
+.online_button{
+    padding: 0 15px;
+    line-height:100%;
+    height: 35px;
+    background-color: #fff;
+    border: 1px solid #909bf7;
+    border-radius: 5px;
+    color:#909bf7;
+    font-size: 15px;
+    outline:none;
+}
+.online_button_xs{
+    padding: 0 9px;
+    line-height:100%;
+    height: 35px;
+    background-color: #fff;
+    border: 1px solid #909bf7;
+    border-radius: 5px;
+    color:#909bf7;
+    font-size: 15px;
+    outline:none;
+}
+/*技术分析*/
+.product_technology{
+    padding-top: 20px;
+    padding-bottom: 120px;
+}
+.technology_title{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.technology_item_title{
+    cursor: pointer;
+    //color: #364b9a;
+    display: inline;
+}
+.technology_button{
+    background-color: #fff;
+    border:none;
+}
+.technology_button_img{
+    color: #364b9a;
+}
+.technology_content{
+    color: #555;
+}
+.button_hidden{
+    display: none;
+}
+/*关于我们*/
+.product_about{
+    padding: 50px 0;
+    background-image: url('../img/footer.jpg');
+    color: #fff;
+    //height: 250px;
+    //color:#909bf7;
+}
+.about_logo{
+    color: #fff;
+    font-family: "Helvetica";
+    text-align: right;
+    padding-right: 2%;
+}
+.about_title{
+    color: #e6f5fe;
+    text-align: right;
+    padding-right: 2%;
+}
+
+
+.manage_table{
+    margin: 50px 0;
+    padding:20px 20px;
+}

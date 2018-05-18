@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/linear_shelf_item"
+              android:layout_width="match_parent"
+              android:layout_height="70dp"
+              android:background="?attr/selectableItemBackground"
+              android:clickable="true"
+              android:focusable="true"
+              android:gravity="center_vertical"
+              android:orientation="horizontal">
+
+    <View
+        android:id="@+id/view_shelf_playing"
+        android:layout_width="3dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="3dp"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@null"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/image_shelf_cover"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_shelf_title"
+                    style="@style/TextAppearance.AppCompat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/book_name"
+                    android:textSize="@dimen/text_size_normal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_shelf_author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/author"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/up_by"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/txt_shelf_uploader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/uploader"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/image_shelf_more"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_more_gray_radius"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_more_vert_black_24dp"
+                android:tint="@android:color/darker_gray"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="bottom"
+            android:background="?android:attr/listDivider"/>
+    </FrameLayout>
+</LinearLayout>

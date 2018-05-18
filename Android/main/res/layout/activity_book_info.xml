@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kotlinproject.wooooo.audink.activity.MainActivity">
+
+    <include
+        layout="@layout/layout_player_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+
+    <LinearLayout
+        android:id="@+id/linear_book_info_contain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/view_play_bar"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/layout_toolbar"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:fillViewport="true"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/normal_padding">
+
+                    <ImageView
+                        android:id="@+id/image_book_info_cover"
+                        android:layout_width="128dp"
+                        android:layout_height="128dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/books"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:id="@+id/txt_book_info_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/normal_padding"
+                        android:layout_toEndOf="@id/image_book_info_cover"
+                        android:text="@string/book_name"
+                        android:textSize="20sp"/>
+
+
+                    <TextView
+                        android:id="@+id/txt_book_info_author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_book_info_name"
+                        android:layout_marginStart="@dimen/normal_padding"
+                        android:layout_marginTop="8dp"
+                        android:layout_toEndOf="@id/image_book_info_cover"
+                        android:text="@string/author"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/txt_book_info_uploader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_book_info_author"
+                        android:layout_marginStart="@dimen/normal_padding"
+                        android:layout_toEndOf="@id/image_book_info_cover"
+                        android:text="@string/uploader"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="14sp"/>
+
+                    <FrameLayout
+                        android:id="@+id/frame_book_info_collect_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_alignBottom="@id/image_book_info_cover"
+                        android:layout_marginStart="@dimen/normal_padding"
+                        android:minWidth="40dp"
+                        android:layout_toEndOf="@id/image_book_info_cover"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_book_info_prefer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:drawableTint="@color/colorPrimary"
+                            android:layout_gravity="center"
+                            android:drawableTop="@drawable/ic_star_white"
+                            android:text="@string/collect"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:gravity="center_vertical"
+                            android:id="@+id/txt_book_info_preferred"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="invisible"
+                            android:layout_gravity="center"
+                            android:drawableTint="@color/colorAccent"
+                            android:drawableTop="@drawable/ic_star_black"
+                            android:text="@string/collected"
+                            android:textSize="12sp"/>
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/txt_book_info_download_all"
+                        android:layout_width="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/image_book_info_cover"
+                        android:layout_marginStart="32dp"
+                        android:layout_toEndOf="@id/frame_book_info_collect_icon"
+                        android:drawableTint="@color/colorPrimary"
+                        android:drawableTop="@drawable/ic_download_interface_arrow_symbol"
+                        android:text="@string/download_all"
+                        android:textSize="12sp"/>
+
+                </RelativeLayout>
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tab_book_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="@dimen/normal_padding"
+                    app:tabIndicatorColor="@color/colorPrimary"
+                    app:tabIndicatorHeight="2dp"
+                    app:tabMaxWidth="90dp"
+                    app:tabMinWidth="90dp"
+                    app:tabMode="scrollable"/>
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpager_book_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

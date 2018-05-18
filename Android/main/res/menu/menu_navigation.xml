@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_item_setting"
+            android:title="@string/setting"
+            android:icon="@drawable/ic_settings_black_24dp"/>
+        <item
+            android:id="@+id/menu_item_download_management"
+            android:title="@string/download_management"
+            android:icon="@drawable/ic_file_download_black_24dp"/>
+        <item
+            android:id="@+id/menu_item_swap_user"
+            android:title="@string/swap_user"
+            android:icon="@drawable/ic_swap_vert_black_24dp"/>
+        <item
+            android:id="@+id/menu_item_about"
+            android:title="@string/about_audink"
+            android:icon="@drawable/ic_info_outline_black_24dp"/>
+    </group>
+</menu>

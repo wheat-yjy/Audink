@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jishaokang.dao.RecordDAO">
+
+    <insert id="insert" parameterType="com.jishaokang.model.dto.Record" useGeneratedKeys="true" keyProperty="recordId">
+      INSERT INTO record
+      SET uploadTime = now() ,userId = #{userId}
+    </insert>
+
+    <delete id="delete" parameterType="int">
+      DELETE FROM record
+      WHERE recordId = #{recordId}
+    </delete>
+
+    <select id="select" parameterType="int" resultType="com.jishaokang.model.dto.Record">
+        SELECT * FROM record
+        WHERE userId = #{userId}
+    </select>
+
+</mapper>

@@ -1,0 +1,312 @@
+登录
+username:string password:string
+>> {uid:int}
+
+注册
+username:string password:string
+>> {uid:int}
+
+用户收藏列表
+uid:int
+>>
+{
+    books: [
+        bookid:int,
+        bookname:string,
+        imagepath:string,
+        author:string,
+        summary:string,
+        uploader:string,
+        chapter:[
+            chapterid:int,
+            chaptername:string,
+            audiopath:string,
+            content:string,
+            lrc:string
+        ]
+    ]
+}
+
+获取一本书的具体信息和章节（文件下载服务器返回的是地址）
+bookid:int
+>>
+{
+    bookid:int,
+    imagepath:string,
+    bookname:string,
+    author:string,
+    summary:string,
+    uploader:string,
+    chapter:[chapter]
+}
+
+收藏有声书
+uid, bookid
+>> status 200
+
+删除有声书
+uid, bookid
+>>status 200
+
+商城
+uid
+>>
+{
+    imageUrl:[imagepath:string],
+    recommend:[book],
+    classification:[
+        classname:string,
+        booklist:[book]
+    ]
+}
+推荐大图
+分类
+更多
+classname
+>>{ booklist:[book]}
+
+搜索
+search
+>> {booklist:[book]}
+
+
+// ------------------------------------------------
+
+全局：
+{
+	status:200    //一个三位整数
+	message："OK" //
+	data:{}       //请求的数据
+}
+
+无特殊说明的简单request类型是formdata，参数涉及数组或者其他非简单类型数据的request类型是JSON，response类型是JSON
+
+appp/需要的权限(all/user)/request
+
+**********权限***********
+all:登录/注册/首页
+user:任务相关的操作
+
+***********返回信息格式的具体说明*******************
+{
+	status:200,message:"OK"     				//代表成功返回
+	status:300,message:"failure"  				//代表失败
+	status:400,message:"permission denied"		//代表没有权限
+}
+
+***********其他说明*******************
+测试服务器地址：http://120.24.70.191:8080/audinkapp/
+首页图片地址固定为
+/app/all/homepageImage/1
+/app/all/homepageImage/2
+/app/all/homepageImage/3
+
+************无权限请求************
+
+1.登录：
+url:/app/all/login
+method:POST
+request:{username:"username",password:"password"}
+response
+{
+	status:200,
+	message:"OK",
+	data:{
+		userId:int;
+	}
+}
+{
+	status:300,//401包括密码错误等。
+	message:"wrongPassword",
+	data:{}
+}
+2.注册：
+url:/app/all/register
+method:POST
+request:{username:"username",password:"password"}
+response
+{
+	status:200,
+	message:"OK",
+	data:{
+		userId:int;
+	}
+}
+{
+	status:300,
+	message:"UserAlreadyExists",
+	data:{}
+}
+
+3.获取首页：
+url:/app/all/homepage
+method:POST
+request:{}
+response
+// {
+// 	status:200,
+// 	message:"OK",
+// 	data:{
+// 		recommend:[			//book的list
+// 			{
+// 				bookId：Integer;
+// 		    	uploader：Integer;
+// 		    	author：String;
+// 		    	imageUrl：String;
+// 		    	bookname：String;
+// 		    	classify：String;
+// 		    	summary：String;
+//     		}
+// 		]
+// 		ClassifyBooks：{
+// 			{
+// 				classify：string；
+// 				books:{			//book的list
+// 					{
+// 						bookId：Integer;
+// 				    	uploader：Integer;
+// 				    	author：String;
+// 				    	imageUrl：String;
+// 				    	bookname：String;
+// 				    	classify：String;
+// 				    	summary：String;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+{
+    imageUrl:[string],
+    recommend:[book],
+    classification:[
+        classname:string,
+        booklist:[book]
+    ]
+}
+
+4.获取某一本书：
+url:/app/all/book
+method:POST
+request:{userId:Int, bookId:int}
+response
+{
+	status:200,
+	message:"OK",
+	data:{
+		bookId：Integer;
+    	uploader：Integer;
+    	author：String;
+    	imageUrl：String;
+    	bookname：String;
+    	classify：String;
+    	summary：String;
+    	chapters:[			//章节的list
+    		{
+    		    chapterId:Integer;
+    			bookId:Integer;
+    			content:String;
+    			chaptername:String;
+    			audioUrl:String;
+    			lrc:String;
+    		}
+    	]
+	}
+}
+
+5.获取某一分类：
+url:/app/all/classify
+method:POST
+request:{UID, classify}
+response
+{
+	status:200,
+	message:"OK",
+	data:{		//book的list
+			{
+				bookId：Integer;
+		    	uploader：Integer;
+		    	author：String;
+		    	imageUrl：String;
+		    	bookname：String;
+		    	classify：String;
+		    	summary：String;
+    		}
+	}
+}
+
+****************用户权限请求*******************
+
+1.获取收藏的书籍
+url:/user/collect/all
+method:get(post?)
+request:{
+	userId:int;
+}
+response:
+{
+	status : 200,
+	message:"OK"
+	data:{		//book的list
+			{
+				bookId：Integer;
+		    	uploader：Integer;
+		    	author：String;
+		    	imageUrl：String;
+		    	bookname：String;
+		    	classify：String;
+		    	summary：String;
+    		}
+	}
+}
+
+2.添加收藏
+url:/user/collect/add
+method:POST
+request
+{
+    userId:int;
+    bookId:int;
+}
+response:
+{
+	status:200,
+	message:"OK",
+	data:{}
+}
+
+
+3.删除收藏
+URL:/user/collection/delete
+method:GET
+request:{
+    userId:int;
+    bookId:int;
+}
+response:
+{
+    "status":200,
+	"message":"OK"
+	data:{}
+}
+
+url:/app/all/search
+method:POST
+request:{bookname:string}
+response
+{
+	status:200,
+	message:"OK",
+	data:{		// 符合条件的book的list
+			{
+				bookId：Integer;
+		    	uploader：Integer;
+		    	author：String;
+		    	imageUrl：String;
+		    	bookname：String;
+		    	classify：String;
+		    	summary：String;
+    		}
+	}
+}

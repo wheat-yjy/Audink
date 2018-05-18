@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jishaokang.dao.CollectDAO">
+    <insert id="insert" parameterType="com.jishaokang.model.dto.Collect">
+      INSERT INTO collect (userId,bookId,mode)
+      VALUES (#{userId},#{bookId},1)
+    </insert>
+    <insert id="insertView" parameterType="com.jishaokang.model.dto.Collect">
+      INSERT INTO collect (userId,bookId,mode)
+      VALUES (#{userId},#{bookId},2)
+    </insert>
+    <delete id="delete" parameterType="com.jishaokang.model.dto.Collect">
+      DELETE FROM collect
+      WHERE userId = #{userId} and bookId = #{bookId}
+    </delete>
+    <select id="selectByUserId" parameterType="int" resultType="com.jishaokang.model.dto.Collect">
+        SELECT * FROM collect
+        WHERE userId = #{userId} and mode = 1
+    </select>
+</mapper>

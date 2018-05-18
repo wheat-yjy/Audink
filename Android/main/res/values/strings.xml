@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Audink</string>
+    <string name="my_bookshelf">我的书架</string>
+    <string name="book_store">听书商城</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="book_name">书名</string>
+    <string name="up_by">up:</string>
+    <string name="author">Author</string>
+    <string name="audink_slogan">Audink 随心畅听</string>
+    <string name="setting">设置</string>
+    <string name="search">搜索</string>
+    <string name="uploader">上传者</string>
+    <string name="download_all">全部下载</string>
+    <string name="collect">收藏</string>
+    <string name="num_1">1</string>
+    <string name="article_name">文章名</string>
+    <string name="recommend_group_name">推荐组名</string>
+    <string name="more">更多</string>
+    <string name="click_to_login">点击登录</string>
+    <string name="download_management">下载管理</string>
+    <string name="swap_user">切换用户</string>
+    <string name="about_audink">关于 Audink</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="password_config">确认密码</string>
+    <string name="downloading">下载中…</string>
+    <string name="collected">已收藏</string>
+
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="team_name">Seafaring_ChainNode 团队</string>
+    <string name="register">注册</string>
+    <string name="cancel_collect">取消收藏</string>
+    <string name="article_abstract">摘要</string>
+</resources>

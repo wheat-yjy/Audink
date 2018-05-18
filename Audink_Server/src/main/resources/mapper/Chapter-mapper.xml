@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jishaokang.dao.ChapterDAO">
+    <select id="selectByBookId" parameterType="int" resultType="com.jishaokang.model.dto.Chapter">
+        SELECT * FROM chapter
+        WHERE bookId = #{bookId}
+    </select>
+
+    <insert id="insert" parameterType="com.jishaokang.model.dto.Chapter" useGeneratedKeys="true" keyProperty="chapterId">
+      INSERT INTO chapter (bookId,content,chaptername,audioUrl,lrc,abst)
+      VALUES (#{bookId},#{content},#{chaptername},#{audioUrl},#{lrc},#{abst})
+    </insert>
+
+</mapper>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".fragment.LoginFragment">
+
+    <EditText
+        android:id="@+id/edit_login_username"
+        android:hint="@string/username"
+        android:drawablePadding="8dp"
+        android:layout_gravity="center_horizontal"
+        android:drawableTint="@color/colorPrimary"
+        android:layout_marginTop="@dimen/normal_padding"
+        android:drawableStart="@drawable/ic_perm_identity_black_24dp"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edit_login_password"
+        android:hint="@string/password"
+        android:drawablePadding="8dp"
+        android:layout_gravity="center_horizontal"
+        android:drawableTint="@color/colorPrimary"
+        android:drawableStart="@drawable/ic_vpn_key_black_24dp"
+        android:layout_marginTop="@dimen/normal_padding"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:text="@string/login"
+        android:layout_width="240dp"
+        android:layout_marginTop="@dimen/normal_padding"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
